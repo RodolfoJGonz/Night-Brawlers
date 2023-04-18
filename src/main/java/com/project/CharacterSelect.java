@@ -10,8 +10,14 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
+
 public class CharacterSelect 
 {
+
+    public int health = 10;
+    Label healthDisplay = new Label("HP: " + String.valueOf(health));
+
+
     public CharacterSelect(Stage mainStage)
     {
         Stage charStage = new Stage();
@@ -29,15 +35,15 @@ public class CharacterSelect
             charStage.close();
         });
 
-        final int health = 10;
         Button attack = new Button("Attack");
+
         
         attack.setOnAction(e ->
         {
-            health =- 1;
-        });
+            health -= 1;
+            healthDisplay.setText("HP: " + String.valueOf(health));
 
-        Label healthDisplay = new Label("HP: " + String.valueOf(health));
+        });
 
         VBox attackButton = new VBox(attack);
         attackButton.setAlignment(Pos.CENTER);
