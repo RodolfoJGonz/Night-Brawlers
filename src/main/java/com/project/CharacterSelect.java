@@ -14,8 +14,6 @@ import javafx.stage.Stage;
 public class CharacterSelect 
 {
 
-    public int health = 10;
-    Label healthDisplay = new Label("HP: " + String.valueOf(health));
 
 
     public CharacterSelect(Stage mainStage)
@@ -28,6 +26,12 @@ public class CharacterSelect
         charStage.initOwner(mainStage);
 
         Button back = new Button("Back");
+        Button next = new Button("Go Fight!");
+
+        next.setOnAction(e ->
+        {
+            new FightStart(charStage);
+        });
 
         back.setOnAction(e ->
         {
@@ -35,23 +39,19 @@ public class CharacterSelect
             charStage.close();
         });
 
-        Button attack = new Button("Attack");
 
-        
-        attack.setOnAction(e ->
-        {
-            health -= 1;
-            healthDisplay.setText("HP: " + String.valueOf(health));
+        HBox nextButton = new HBox(next);
+        nextButton.setAlignment(Pos.BOTTOM_RIGHT);
 
-        });
-
-        VBox attackButton = new VBox(attack);
-        attackButton.setAlignment(Pos.CENTER);
-
-        VBox backButton = new VBox(back);
+        HBox backButton = new HBox(back);
         backButton.setAlignment(Pos.BOTTOM_LEFT);
+        
+        HBox buttonHolder = new HBox(backButton, nextButton);
+        buttonHolder.setAlignment(Pos.BOTTOM_CENTER);
+        buttonHolder.setSpacing(100);
 
-        VBox layoutBox = new VBox(healthDisplay, attackButton, backButton);
+        VBox layoutBox = new VBox(buttonHolder);
+        layoutBox.setFillWidth(true);
         
         Scene currentScene = new Scene(layoutBox, 640, 480);
 
