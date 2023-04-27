@@ -5,7 +5,7 @@ import java.util.Hashtable;
 
 public class Character {
     
-    int health = 10;
+    public int health = 10;
     int key;
 
 
@@ -16,13 +16,13 @@ public class Character {
         return key;
     }
 
-    Hashtable<String,String> abilities = new Hashtable<String,String>();
+    Hashtable<String,Integer> abilities = new Hashtable<String,Integer>();
 
     public void initiateAbilities()
     {
-        abilities.put("Attack 1", "Light Attack");
-        abilities.put("Attack 2", "Heavy Attack");
-        abilities.put("Attack 3", "Special Attack");
-        abilities.put("Defense 1", "Block");
+        abilities.put("Attack 1", 2);
+        abilities.put("Attack 2", 3);
+        abilities.put("Attack 3", 2);
+        abilities.put("Defense 1", 1);
     }
 }
