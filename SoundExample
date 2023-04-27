@@ -1,0 +1,64 @@
+import java.awt.Container
+import javax.sound.sampled.Clip;
+inport javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class Sound{
+JFrame window;
+Container com;
+JPanel buttonPanel;
+JButton soundbutton;
+String clickSound;
+ButtonHandler bHandler = new ButtonHandler();
+SoundEffect se = new SoundEffect();
+public static void main (String[] args) {
+new Sound();
+}
+
+public Sound(){
+window = new 3frame();
+
+window.setSize(600,600)
+window.setDefaultCloseOperation(3Frame.EXIT_ON_CLOSE);
+window.getContentPane().setBackground(Color.black);
+window.setLayout(null)
+com = window.getContentPane();
+window.setVisible(true);
+
+buttonPanel = new JPanel();
+buttonPanel.setBounds)(300,300,200,100);
+buttonPanel.setBackground(Color.blue);
+com.add(buttonPanel);
+
+soundButton = new JBButton("Music")
+soundButton.setFocusPainted(false);
+soundButton.addActionListener(bHandler);
+buttonPanel.add(soundButton);
+
+clickSound = ".//res//retroClick.wav"
+}
+public class SoundEffect(
+Clip clip;
+public void setFile(String soundFileName){
+try{
+file Song = new file(soundFileName);
+AudioInputStream sound = AudioSystem.getAudioInputStream(Song)
+clip = AudioSystem.getClip();
+clip.open(sound);
+}
+catch(Exception e){
+}
+}
+public void play(){
+clip.setFramePosition(0);
+clip.start();
+}
+}
+public class ButtonHandler implements ActionListener{
+public void actionPerformed(ActionEvent event){
+se.setFile(clickSound);
+se.play();
+}
+}
+}
