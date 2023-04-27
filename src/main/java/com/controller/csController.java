@@ -50,13 +50,13 @@ public class csController {
         Eddy player = new Eddy();
         Thread.sleep(2000);
 
-        Parent charSelectViewParent = FXMLLoader.load(getClass().getResource("/com/view/battleView.fxml"));
-        Scene charSelectScene = new Scene(charSelectViewParent);
+        Parent bvParent = FXMLLoader.load(getClass().getResource("/com/view/battleView.fxml"));
+        Scene bvScene = new Scene(bvParent);
 
 
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
 
-        window.setScene(charSelectScene);
+        window.setScene(bvScene);
         window.show();
     }
 
@@ -65,13 +65,13 @@ public class csController {
         Edna player = new Edna();
         Thread.sleep(2000);
         
-        Parent charSelectViewParent = FXMLLoader.load(getClass().getResource("/com/view/battleView.fxml"));
-        Scene charSelectScene = new Scene(charSelectViewParent);
+        Parent bvParent = FXMLLoader.load(getClass().getResource("/com/view/battleView.fxml"));
+        Scene bvScene = new Scene(bvParent);
 
 
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
 
-        window.setScene(charSelectScene);
+        window.setScene(bvScene);
         window.show();
 
     }
@@ -83,13 +83,13 @@ public class csController {
         Thread.sleep(2000);
 
 
-        Parent charSelectViewParent = FXMLLoader.load(getClass().getResource("/com/view/battleView.fxml"));
-        Scene charSelectScene = new Scene(charSelectViewParent);
+        Parent bvParent = FXMLLoader.load(getClass().getResource("/com/view/battleView.fxml"));
+        Scene bvScene = new Scene(bvParent);
 
 
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
 
-        window.setScene(charSelectScene);
+        window.setScene(bvScene);
         window.show();
         }
 
@@ -102,13 +102,13 @@ public class csController {
 
         Thread.sleep(2000);
 
-        Parent charSelectViewParent = FXMLLoader.load(getClass().getResource("/com/view/battleView.fxml"));
-        Scene charSelectScene = new Scene(charSelectViewParent);
+        Parent bvParent = FXMLLoader.load(getClass().getResource("/com/view/battleView.fxml"));
+        Scene bvScene = new Scene(bvParent);
 
 
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
 
-        window.setScene(charSelectScene);
+        window.setScene(bvScene);
         window.show();
 
     }

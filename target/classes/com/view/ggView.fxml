@@ -6,19 +6,23 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="gameOver" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: Gray;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.goController">
    <children>
-      <Label layoutX="145.0" text="Game Over!">
+      <Label fx:id="gameOverLabel" layoutX="145.0" text="Game Over!" textFill="WHITE">
          <font>
             <Font size="59.0" />
          </font>
       </Label>
-      <VBox alignment="CENTER" layoutX="238.0" layoutY="100.0" prefHeight="200.0" prefWidth="123.0" spacing="15.0">
+      <VBox fx:id="gameOverButtons" alignment="CENTER" layoutX="158.0" layoutY="77.0" prefHeight="239.0" prefWidth="284.0" spacing="15.0">
          <children>
-            <Button mnemonicParsing="false" text="Play Again" />
-            <Button mnemonicParsing="false" text="Character Select" />
-            <Button mnemonicParsing="false" text="Main Menu" />
+            <Label fx:id="resultLabel" alignment="CENTER" onMouseClicked="#updateResults" prefHeight="64.0" prefWidth="238.0" text="Click for Results" textFill="WHITE">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Label>
+            <Button fx:id="playAgainButton" mnemonicParsing="false" onAction="#playAgain" text="Play Again" />
+            <Button fx:id="charSelectButton" mnemonicParsing="false" onAction="#goCharSelect" text="Character Select" />
+            <Button fx:id="mainMenuButton" mnemonicParsing="false" onAction="#goMainMenu" text="Main Menu" />
          </children>
       </VBox>
    </children>

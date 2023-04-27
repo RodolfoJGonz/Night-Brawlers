@@ -1,22 +1,29 @@
 package com.controller;
 
 
-import com.characterProperties.Character;
+import java.io.IOException;
 
+
+import javafx.scene.Node;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 
 public class bvController {
     int playerHealth = 20;
     int cpuHealth = 20;
     int playerAttack, cpuAttack;
+    public static String resulting;
 
 
     @FXML
@@ -73,7 +80,7 @@ public class bvController {
     
 
     @FXML
-    void attack1(ActionEvent event) {
+    void attack1(ActionEvent event) throws IOException, InterruptedException{
     //     player.health = 10;
     //     player.health = player.health - 1;
     //     playerHPnum.setText(Integer.toString(player.health));
@@ -125,16 +132,38 @@ public class bvController {
         {
          // go to game over scene
          if(cpuHealth <= 0)
-                combatTextArea.appendText("Game Over. You win!");
-            else if(playerHealth <= 0)
-                combatTextArea.appendText("Game Over. You Lost!");
-            else
-                combatTextArea.appendText("Game Over. You Tied!");   
+         {
+             combatTextArea.appendText("Game Over. You win!");
+             resulting = "You win!";
+         }
+         else if(playerHealth <= 0)
+         {
+             combatTextArea.appendText("Game Over. You Lost!");
+             resulting = "You lost!";
+         }
+             
+         else
+         {
+             combatTextArea.appendText("Game Over. You Tied!");
+             resulting = "You tied!";
+         }
+
+
+
+            //Thread.sleep(1000);
+            Parent goViewParent = FXMLLoader.load(getClass().getResource("/com/view/ggView.fxml"));
+            Scene goScene = new Scene(goViewParent);
+
+
+            Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+
+            window.setScene(goScene);
+            window.show();
         }
      }
 
     @FXML
-    void attack2(ActionEvent event) {
+    void attack2(ActionEvent event) throws IOException, InterruptedException {
         playerHPnum.setText(Integer.toString(playerHealth));
         cpuHPnum.setText(Integer.toString(cpuHealth));
         cpuAttack = 0;
@@ -180,16 +209,37 @@ public class bvController {
         if( playerHealth <= 0 || cpuHealth <= 0)
         {
             if(cpuHealth <= 0)
+            {
                 combatTextArea.appendText("Game Over. You win!");
+                resulting = "You win!";
+            }
             else if(playerHealth <= 0)
+            {
                 combatTextArea.appendText("Game Over. You Lost!");
+                resulting = "You lost!";
+            }
+                
             else
+            {
                 combatTextArea.appendText("Game Over. You Tied!");
+                resulting = "You tied!";
+            }
+
+
+                //Thread.sleep(2000);
+                Parent goViewParent = FXMLLoader.load(getClass().getResource("/com/view/ggView.fxml"));
+                Scene goScene = new Scene(goViewParent);
+    
+    
+                Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+    
+                window.setScene(goScene);
+                window.show();
         }
     }
 
     @FXML
-    void attack3(ActionEvent event) {
+    void attack3(ActionEvent event) throws IOException, InterruptedException{
         playerHPnum.setText(Integer.toString(playerHealth));
         cpuHPnum.setText(Integer.toString(cpuHealth));
         cpuAttack = 0;
@@ -235,17 +285,38 @@ public class bvController {
         if( playerHealth <= 0 || cpuHealth <= 0)
         {
             if(cpuHealth <= 0)
+            {
                 combatTextArea.appendText("Game Over. You win!");
+                resulting = "You win!";
+            }
             else if(playerHealth <= 0)
+            {
                 combatTextArea.appendText("Game Over. You Lost!");
+                resulting = "You lost!";
+            }
+                
             else
+            {
                 combatTextArea.appendText("Game Over. You Tied!");
+                resulting = "You tied!";
+            }
+                
 
+                
+            //Thread.sleep(2000);
+            Parent goViewParent = FXMLLoader.load(getClass().getResource("/com/view/ggView.fxml"));
+            Scene goScene = new Scene(goViewParent);
+
+
+            Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+
+            window.setScene(goScene);
+            window.show();
         }
     }
 
     @FXML
-    void block(ActionEvent event) {
+    void block(ActionEvent event) throws IOException, InterruptedException {
 
         playerHPnum.setText(Integer.toString(playerHealth));
         cpuHPnum.setText(Integer.toString(cpuHealth));
@@ -291,12 +362,31 @@ public class bvController {
         if( playerHealth <= 0 || cpuHealth <= 0)
         {
          // go to game over scene   
-            if(cpuHealth <= 0)
-                combatTextArea.appendText("Game Over. You win!");
-            else if(playerHealth <= 0)
-                combatTextArea.appendText("Game Over. You Lost!");
-            else
-                combatTextArea.appendText("Game Over. You Tied!");
+         if(cpuHealth <= 0)
+         {
+             combatTextArea.appendText("Game Over. You win!");
+             resulting = "You win!";
+         }
+         else if(playerHealth <= 0)
+         {
+             combatTextArea.appendText("Game Over. You Lost!");
+             resulting = "You lost!";
+         }
+             
+         else
+         {
+             combatTextArea.appendText("Game Over. You Tied!");
+             resulting = "You tied!";
+         }
+                //Thread.sleep(2000);
+                Parent goViewParent = FXMLLoader.load(getClass().getResource("/com/view/ggView.fxml"));
+                Scene goScene = new Scene(goViewParent);
+    
+    
+                Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+    
+                window.setScene(goScene);
+                window.show();
         }
     }
 
