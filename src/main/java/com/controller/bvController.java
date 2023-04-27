@@ -303,7 +303,7 @@ public class bvController {
                 
 
                 
-            //Thread.sleep(2000);
+            //Thread.sleep(1000);
             Parent goViewParent = FXMLLoader.load(getClass().getResource("/com/view/ggView.fxml"));
             Scene goScene = new Scene(goViewParent);
 
