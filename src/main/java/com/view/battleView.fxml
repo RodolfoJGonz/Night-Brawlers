@@ -41,7 +41,7 @@
                         <Font size="17.0" />
                      </font>
                   </Label>
-                  <Label fx:id="playerHPnum" text="10" textFill="WHITE">
+                  <Label fx:id="playerHPnum" text="20" textFill="WHITE">
                      <font>
                         <Font size="41.0" />
                      </font>
@@ -59,7 +59,7 @@
                         <Font size="17.0" />
                      </font>
                   </Label>
-                  <Label fx:id="cpuHPnum" text="10" textFill="WHITE">
+                  <Label fx:id="cpuHPnum" text="20" textFill="WHITE">
                      <font>
                         <Font size="41.0" />
                      </font>
